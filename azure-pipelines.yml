@@ -17,7 +17,7 @@ steps:
     cd new-project-playwright
     npm install
     npx playwright install
-    npx playwright test --reporter=html
+    npx playwright test
   displayName: 'Execute Playwright'
 
 - task: PublishBuildArtifacts@1
