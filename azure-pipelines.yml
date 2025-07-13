@@ -1,0 +1,21 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- checkout: self 
+  displayName: 'Checkout Repo'
+
+- script: |
+    git config --global user.name "vikaluk"
+    git config --global user.email "vikaluk@gmail.com"
+  displayName: 'Configure Git user'
+
+- script: |
+    cd new-project-playwright
+    npm install
+    npx playwright install
+    npx playwright test 
+  displayName: 'Execute Playwright'
