@@ -21,6 +21,7 @@ steps:
   displayName: 'Execute Playwright'
 
 - task: PublishBuildArtifacts@1
+  condition: succeededOrFailed()
   inputs:
     PathtoPublish: '$(System.DefaultWorkingDirectory)/new-project-playwright/playwright-report'
     ArtifactName: 'playwright-report'
