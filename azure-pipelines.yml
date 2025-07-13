@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default  # or the name of the pool you configured
 
 steps:
 - checkout: self 
