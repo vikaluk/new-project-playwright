@@ -19,3 +19,10 @@ steps:
     npx playwright install
     npx playwright test 
   displayName: 'Execute Playwright'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/new-project-playwright/playwright-report'
+    ArtifactName: 'playwright-report'
+    publishLocation: 'Container'
+  displayName: 'Publish Playwright HTML report artifact'
